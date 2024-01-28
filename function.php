@@ -6,5 +6,13 @@
         $variabilePass .= chr(rand(33, 125));
     }
 
-    echo $variabilePass;
+    // echo $variabilePass;
+
+    if(isset($password)){
+        session_start();
+        $_SESSION['variabilePass'] = $variabilePass;
+
+
+        header('Location: ./printPass.php');
+    }
     ?>
